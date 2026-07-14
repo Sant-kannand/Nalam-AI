@@ -1,0 +1,6 @@
+{
+  "name": "Nalam AI",
+  "description": "An offline-first, voice-enabled early screening healthcare assistant for Non-Communicable Diseases (NCDs) supporting English and Tamil.",
+  "requestFramePermissions": ["camera", "geolocation", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

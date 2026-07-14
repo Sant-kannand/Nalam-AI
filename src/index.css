@@ -1,0 +1,72 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --animate-pulse-slow: pulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* Overriding standard Slate color spectrum to match 'Professional Polish' theme specifications */
+  --color-slate-950: #0f172a;
+  --color-slate-900: #1e293b;
+  --color-slate-850: #1e293b;
+  --color-slate-800: #334155;
+  --color-slate-750: #475569;
+}
+
+/* Custom Scanning Laser animations for Doctor Viewfinder */
+@keyframes scanner-laser {
+  0%, 100% {
+    top: 0%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-scanner-laser {
+  animation: scanner-laser 2.5s ease-in-out infinite;
+  position: absolute;
+}
+
+/* Fade-in transitions for route navigation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* Print Overrides for Physical Medical Reports */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header, footer, button, .print\:hidden {
+    display: none !important;
+  }
+  #report-printable-area {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
